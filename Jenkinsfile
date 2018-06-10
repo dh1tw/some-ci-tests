@@ -25,12 +25,6 @@ pipeline {
         echo 'Deploying....'
       }
     }
-    stage('Keep cool') {
-      steps {
-        tool 'vscode'
-        archiveArtifacts '*.zip'
-      }
-    }
   }
   environment {
     DUDE = 'Hallo'
