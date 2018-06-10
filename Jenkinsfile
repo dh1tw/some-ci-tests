@@ -8,10 +8,9 @@ pipeline {
             echo 'Building..'
           }
         }
-        stage('') {
+        stage('error') {
           steps {
             echo 'This is nice!'
-            sh 'print hello'
           }
         }
       }
@@ -24,6 +23,12 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'Deploying....'
+      }
+    }
+    stage('Keep cool') {
+      steps {
+        tool 'vscode'
+        archiveArtifacts '*.zip'
       }
     }
   }
